@@ -1,11 +1,13 @@
-import React from 'react'
+import React from "react";
+import PropTypes from "prop-types";
 
 export default function Navbar(props) {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
         <a className="navbar-brand" href="/">
-          {props.dynamicTitle}{/* check in App.js that we pass the dynamicTitle as an attribute in the component */}
+          {props.dynamicTitle}
+          {/* check in App.js that we pass the dynamicTitle as an attribute in the component */}
         </a>
         <button
           className="navbar-toggler"
@@ -27,19 +29,19 @@ export default function Navbar(props) {
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/">
-                About
+                {props.aboutText}
               </a>
             </li>
           </ul>
         </div>
-        <form class="d-flex" role="search">
+        <form className="d-flex" role="search">
           <input
             class="form-control me-2"
             type="search"
             placeholder="Search"
             aria-label="Search"
           />
-          <button class="btn btn-outline-success" type="submit">
+          <button className="btn btn-outline-success" type="submit">
             Search
           </button>
         </form>
@@ -47,3 +49,16 @@ export default function Navbar(props) {
     </nav>
   );
 }
+// Proptypes
+
+Navbar.proptype = {
+  dynamicTitle: PropTypes.string,
+  aboutText: PropTypes.string,
+};
+
+//default proptypes
+
+Navbar.defaultProps = {
+  dynamicTitle: "Title Of Website",
+  aboutText: "About Us Page",
+};

@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./components/Navbar";
+
 import "./App.css";
 
 //importing module from the components folder to get worked upon
@@ -10,7 +11,8 @@ export default function App() {
 
   return (
     <>
-      <Navbar dynamicTitle="Play with Text"/>
+      {/* <Navbar dynamicTitle="Play with Text" aboutText = "About Us"/> */}
+      <Navbar />
     </>
   );
   // }
