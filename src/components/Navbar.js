@@ -36,7 +36,7 @@ export default function Navbar(props) {
         </div>
         <form className="d-flex" role="search">
           <input
-            class="form-control me-2"
+            className="form-control me-2"
             type="search"
             placeholder="Search"
             aria-label="Search"
@@ -52,13 +52,13 @@ export default function Navbar(props) {
 // Proptypes
 
 Navbar.proptype = {
-  dynamicTitle: PropTypes.string,
-  aboutText: PropTypes.string,
+  dynamicTitle: PropTypes.string.isRequired,
+  aboutText: PropTypes.string.isRequired,
 };
 
 //default proptypes
 
-Navbar.defaultProps = {
-  dynamicTitle: "Title Of Website",
-  aboutText: "About Us Option",
-};
+// Navbar.defaultProps = {
+//   dynamicTitle: "Title Of Website",
+//   aboutText: "About Us Option",
+// };
