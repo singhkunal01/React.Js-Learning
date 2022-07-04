@@ -1,8 +1,35 @@
 import React, { useState } from "react";
 
-
-
 export default function TextForm(props) {
+
+const [styling, setStyling] = useState({
+  color: "#000",
+  backgroundColor: "#fff",
+});
+// eslint-disable-next-line no-unused-vars
+const [btnText, setBtnText] = useState("Dark Mode");
+/* working on enabling the dark mode  */
+const toggleDarkMode = () => {      
+  if (styling.color === "#000") {
+    setStyling({
+      color: "#fff",
+      backgroundColor: "#000",
+    });
+    setBtnText("Light Mode");
+  } else {
+    setStyling({
+      color: "#000",
+      backgroundColor: "#fff",
+    });
+    setBtnText("Dark Mode");
+  }
+};
+
+
+
+
+
+
   const toUppercase = () => {
     // console.log('upper case clicked ', text);
     let uppercaseText = text.toUpperCase();
@@ -21,6 +48,8 @@ export default function TextForm(props) {
       setText("");
   };
  
+    
+    
  
   /*after changing of state we cannot change in textarea you can when we change 
     anything the onChange function called so we get the event in return thats why use event
@@ -39,8 +68,8 @@ export default function TextForm(props) {
      correct way : text ("Enter your text here")
      */
     return (
-      <>
-        <div className="container">
+        <>
+        <div className="container" style={styling}>
           <h1>{props.heading}</h1>
           <div className="mb-3">
             <textarea
@@ -48,7 +77,8 @@ export default function TextForm(props) {
               value={text}
               onChange={onChangeClick}
               id="txtComp"
-              rows="3" placeholder="Enter Your Text Here .."
+              rows="3"
+              placeholder="Enter Your Text Here .."
             ></textarea>
           </div>
           <button className="btn btn-primary my-4 mx-2" onClick={toUppercase}>
@@ -59,6 +89,12 @@ export default function TextForm(props) {
           </button>
           <button className="btn btn-primary my-4 mx-2" onClick={clearText}>
             Clear
+          </button>
+          <button
+            className="btn btn-primary my-4 mx-2"
+            onClick={toggleDarkMode}
+          >
+            {btnText}
           </button>
         </div>
 
