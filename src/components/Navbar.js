@@ -60,5 +60,5 @@ Navbar.proptype = {
 
 Navbar.defaultProps = {
   dynamicTitle: "Title Of Website",
-  aboutText: "About Us Page",
+  aboutText: "About Us Option",
 };
