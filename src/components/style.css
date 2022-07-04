@@ -1,0 +1,9 @@
+/* changes in the app */
+.container{
+  font-family: 'Poppins';
+}
+
+.preview {
+    color: rgb(0, 47, 255) ;
+    font-style: italic;
+}

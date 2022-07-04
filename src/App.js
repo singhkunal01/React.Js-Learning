@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import "./App.css";
+import "./components/style.css";
 import TextForm from "./components/TextForm";
 
 //importing module from the components folder to get worked upon
