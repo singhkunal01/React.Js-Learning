@@ -9,6 +9,7 @@ export default function TextForm(props) {
     let uppercaseText = text.toUpperCase();
     //using setText
     setText(uppercaseText);
+    document.title="Converting Upper Case"
     };
     
     //converting into back to lower case
@@ -16,10 +17,14 @@ export default function TextForm(props) {
     let lowercaseText = text.toLowerCase();
     //using setText
     setText(lowercaseText);
+    document.title = "Converting Lower Case";
+
     }; 
 
   const clearText = () => {
-      setText("");
+    setText("");
+    document.title = "Play With Text";
+    
   };
  
  
