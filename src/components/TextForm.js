@@ -15,10 +15,7 @@ export default function TextForm(props) {
 
   //converting into back to lower case
   const toLowercase = () => {
-    if (text.length <= 0) {
-      alert("Enter Some Text First");
-      return;
-    }
+ 
     let lowercaseText = text.toLowerCase();
     //using setText
     setText(lowercaseText);
@@ -26,10 +23,7 @@ export default function TextForm(props) {
   };
 
   const clearText = () => {
-    if (text.length <= 0) {
-      alert("Enter Some Text First");
-      return;
-    }
+   
     setText("");
     document.title = "Play With Text";
   };
@@ -70,13 +64,13 @@ export default function TextForm(props) {
             }}
           ></textarea>
         </div>
-        <button className="btn btn-primary my-4 mx-2" onClick={toUppercase}>
+        <button disabled={text.length===0} className="btn btn-primary my-4 mx-2" onClick={toUppercase}>
           Convert To UpperCase
         </button>
-        <button className="btn btn-primary my-4 mx-2" onClick={toLowercase}>
+        <button disabled={text.length===0} className="btn btn-primary my-4 mx-2" onClick={toLowercase}>
           Convert To LowerCase
         </button>
-        <button className="btn btn-primary my-4 mx-2" onClick={clearText}>
+        <button disabled={text.length===0} className="btn btn-primary my-4 mx-2" onClick={clearText}>
           Clear
         </button>
       </div>
@@ -89,15 +83,12 @@ export default function TextForm(props) {
         <p>
           <li style={{ color: props.mode === "light" ? "black" : "white" }}>
             <strong>Total Words: </strong>
-            {text.length !== 0 ? text.split(" ").length : 0}
+            {text.split(" ").filter((elem) => {
+              return elem.length!==0}).length}
           </li>
           <li style={{ color: props.mode === "light" ? "black" : "white" }}>
             <strong>Total Characters: </strong>
             {text.length}
-          </li>
-          <li style={{ color: props.mode === "light" ? "black" : "white" }}>
-            <strong>Total Spaces: </strong>
-            {text.split(" ").length - 1}
           </li>
         </p>
         <h1
