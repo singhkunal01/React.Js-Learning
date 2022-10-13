@@ -69,7 +69,6 @@ export default function Navbar(props) {
   );
 }
 // Proptypes
-
 Navbar.proptype = {
   dynamicTitle: PropTypes.string.isRequired,
   aboutText: PropTypes.string.isRequired,
